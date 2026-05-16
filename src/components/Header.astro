@@ -1,0 +1,27 @@
+---
+import MynaIcon from '@/components/MynaIcon.astro';
+---  
+  
+  <header id="site-header" class="fixed inset-x-1 top-0 z-50 transition-all duration-300">
+    <nav class="container-premium flex h-[var(--nav-h)] items-center justify-between">
+      <a href="#accueil" class="font-display text-3xl tracking-[.08em] text-cream transition-colors" data-nav-logo>Maison Kayser</a>
+      <div class="hidden items-center gap-9 lg:flex">
+        <a class="nav-link text-xs font-bold uppercase tracking-[.15em] text-cream/78 transition hover:text-saffron" href="#maison">Maison</a>
+        <a class="nav-link text-xs font-bold uppercase tracking-[.15em] text-cream/78 transition hover:text-saffron" href="#carte">Carte</a>
+        <a class="nav-link text-xs font-bold uppercase tracking-[.15em] text-cream/78 transition hover:text-saffron" href="#services">Services</a>
+        <a class="nav-link text-xs font-bold uppercase tracking-[.15em] text-cream/78 transition hover:text-saffron" href="#galerie">Galerie</a>
+        <a class="nav-link text-xs font-bold uppercase tracking-[.15em] text-cream/78 transition hover:text-saffron" href="#contact">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="premium-button bg-caramel px-5 text-linen shadow-soft hover:bg-saffron" data-cart-open aria-label="Ouvrir le panier">
+          <MynaIcon name="bag" />
+          <span class="hidden sm:inline">Panier</span>
+          <span class="grid size-7 place-items-center rounded-full bg-linen text-xs text-cocoa" data-cart-count>0</span>
+        </button>
+        <button class="nav-menu grid size-12 place-items-center rounded-full border border-cream/25 text-cream lg:hidden" data-menu-open aria-label="Ouvrir le menu">
+          <MynaIcon  name="menu" />
+        </button>
+      </div>
+    </nav>
+  </header>
+

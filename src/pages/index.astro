@@ -1,0 +1,304 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import MynaIcon from "@/components/MynaIcon.astro";
+import products from "@/data/products.json";
+import reviews from "@/data/reviews.json";
+import Loader  from "@/components/Loader.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+
+const categories = ["Tous", ...Array.from(new Set(products.map((product) => product.category)))];
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER ?? "2250700333444";
+const heroImage = "hero.jpg";
+const gallery = [
+  ["Viennoiseries", "https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=1100&q=85"],
+  ["Pâtisserie fine", "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=900&q=85"],
+  ["Pains artisanaux", "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=900&q=85"],
+  ["Brunch", "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=85"],
+  ["Glaces", "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=900&q=85"],
+  ["Ambiance restaurant", "/ambiance.jpg"]
+];
+---
+<BaseLayout>
+  <Loader />
+  <div class="fixed inset-0 z-[60] translate-x-full bg-espresso text-cream transition-transform duration-500 lg:hidden" data-mobile-menu>
+    <div class="container-premium flex h-[var(--nav-h)] items-center justify-between">
+      <span class="font-display text-2xl tracking-[.08em]">Maison Kayser</span>
+      <button class="grid size-11 place-items-center rounded-full border border-cream/20" data-menu-close aria-label="Fermer le menu">
+        <MynaIcon name="close" />
+      </button>
+    </div>
+    <div class="container-premium grid gap-7 pt-16 font-display text-4xl">
+      <a href="#maison" data-menu-link>Notre Maison</a>
+      <a href="#carte" data-menu-link>Carte</a>
+      <a href="#services" data-menu-link>Services</a>
+      <a href="#galerie" data-menu-link>Galerie</a>
+      <a href="#contact" data-menu-link>Contact</a>
+    </div>
+  </div>
+  <Header />
+  <main>
+    <section id="accueil" class="relative min-h-[92vh] overflow-hidden bg-espresso text-cream space-y-4">
+      <div class="absolute inset-0" data-parallax>
+        <img src={heroImage} alt="Boulangerie française premium Maison Kayser Abidjan" class="size-full object-cover opacity-70" loading="eager" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-espresso/45 via-espresso/35 to-espresso"></div>
+      <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-espresso to-transparent"></div>
+      <div class="container-premium relative flex min-h-[92vh] items-center pb-20 pt-32">
+        <div class="max-w-4xl">
+          <p class="eyebrow hero-piece text-saffron">Boulangerie · Pâtisserie · Abidjan</p>
+          <h1 class="display-title hero-piece mt-5 text-[3.5rem] text-cream sm:text-[5rem] lg:text-[7.2rem]">
+            L'art français, <span class="italic text-saffron">cuit chaque matin</span>.
+          </h1>
+          <p class="hero-piece mt-6 max-w-2xl text-base leading-8 text-cream/78 sm:text-lg">
+            Viennoiseries au beurre, pâtisserie premium, brunch élégant, pains au levain et desserts glacés pour les moments qui méritent mieux qu'une simple pause.
+          </p>
+          <div class="hero-piece mt-9 flex flex-col gap-3 sm:flex-row">
+            <button class="premium-button bg-whatsapp text-white shadow-[0_18px_50px_rgba(37,211,102,.25)] hover:bg-[#1fb85a]" data-wa-order>
+              <MynaIcon name="whatsapp" />
+              Commander sur WhatsApp
+            </button>
+            <a class="premium-button border border-cream/35 text-cream hover:border-saffron hover:text-saffron" href="#carte">
+              Voir la carte
+              <MynaIcon name="arrow" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="container-premium relative -mt-20 grid gap-3 pb-8 sm:grid-cols-3">
+        <div class="glass-panel reveal rounded-md p-5">
+          <p class="font-display text-4xl text-cocoa">4,3/5</p>
+          <p class="mt-1 text-sm uppercase tracking-[.16em] text-muted">Note Google</p>
+        </div>
+        <div class="glass-panel reveal rounded-md p-5">
+          <p class="font-display text-4xl text-cocoa">900+</p>
+          <p class="mt-1 text-sm uppercase tracking-[.16em] text-muted">Avis clients</p>
+        </div>
+        <div class="glass-panel reveal rounded-md p-5">
+          <p class="font-display text-4xl text-cocoa">22h</p>
+          <p class="mt-1 text-sm uppercase tracking-[.16em] text-muted">Ouvert jusqu'a</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="maison" class="bg-cream py-20 lg:py-28">
+      <div class="container-premium grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+        <div class="reveal-left relative">
+          <img src="/GgsDu.jpg" alt="Ambiance chaleureuse de boulangerie premium" class="aspect-[4/5] w-full rounded-md object-cover shadow-premium" loading="lazy" />
+          <div class="absolute -bottom-6 right-5 rounded-full bg-espresso px-7 py-6 text-center text-cream shadow-premium">
+            <p class="font-display text-4xl text-saffron">2014</p>
+            <p class="text-[.68rem] font-bold uppercase tracking-[.18em]">Abidjan</p>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <p class="eyebrow">Notre Maison</p>
+          <h2 class="display-title mt-4 text-5xl text-espresso sm:text-6xl">Savoir-faire artisanal, allure internationale.</h2>
+          <p class="mt-6 max-w-2xl text-lg leading-9 text-muted">
+            Maison Kayser Abidjan réunit la précision des grandes boulangeries françaises et la chaleur d'une adresse de quartier. Pains artisanaux, viennoiseries, pâtisseries premium, brunchs généreux, desserts glacés et pauses café s'y dégustent dans une atmosphère soignée.
+          </p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              ["leaf", "Levain & farine", "Pains façonnés avec fermentation lente."],
+              ["spark", "Pâtisserie premium", "Tartes, éclairs et entremets du jour."],
+              ["truck", "Livraison rapide", "Commandes WhatsApp préparées avec soin."],
+              ["star", "Service élégant", "Accueil attentif, brunch et repas sur place."]
+            ].map(([icon, title, text]) => (
+              <article class="rounded-md border border-biscuit bg-linen p-5 shadow-soft">
+                <MynaIcon name={icon} class="icon text-caramel" />
+                <h3 class="mt-4 text-sm font-bold uppercase tracking-[.14em] text-espresso">{title}</h3>
+                <p class="mt-2 text-sm leading-6 text-muted">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="carte" class="bg-linen py-20 lg:py-28">
+      <div class="container-premium">
+        <div class="reveal flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div>
+            <p class="eyebrow">Notre carte</p>
+            <h2 class="display-title mt-4 text-5xl text-espresso sm:text-6xl">Des envies pretes a commander.</h2>
+          </div>
+          <p class="max-w-md text-sm leading-7 text-muted">Filtrez par catégorie, ajoutez vos favoris au panier et envoyez une commande structurée directement sur WhatsApp Business.</p>
+        </div>
+        <div class="no-scrollbar mt-8 flex gap-3 overflow-x-auto pb-2" data-category-tabs>
+          {categories.map((category) => (
+            <button class="category-tab shrink-0 rounded-full border border-biscuit px-5 py-3 text-xs font-bold uppercase tracking-[.14em] text-muted transition hover:border-espresso hover:bg-espresso hover:text-cream data-[active=true]:border-espresso data-[active=true]:bg-espresso data-[active=true]:text-cream" data-category={category} data-active={category === "Tous" ? "true" : "false"}>
+              {category}
+            </button>
+          ))}
+        </div>
+        <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" data-products-grid>
+          {products.map((product) => (
+            <article class="product-card reveal group overflow-hidden rounded-md border border-biscuit bg-linen shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-premium" data-product-card data-category={product.category}>
+              <div class="relative aspect-[4/3] overflow-hidden bg-biscuit">
+                <img src={product.image} alt={product.name} class="size-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-espresso/35 to-transparent"></div>
+              </div>
+              <div class="p-5">
+                <p class="text-[.7rem] font-bold uppercase tracking-[.18em] text-caramel">{product.category}</p>
+                <h3 class="mt-2 font-display text-2xl text-espresso">{product.name}</h3>
+                <p class="mt-3 min-h-14 text-sm leading-6 text-muted">{product.description}</p>
+                <div class="mt-5 flex items-center justify-between gap-3">
+                  <span class="font-semibold text-cocoa">{product.price.toLocaleString("fr-FR")} FCFA</span>
+                  <button class="rounded-full bg-espresso px-4 py-2 text-xs font-bold uppercase tracking-[.12em] text-cream transition hover:bg-caramel" data-add-product={product.id}>
+                    Ajouter
+                  </button>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="bg-cream py-20 lg:py-28">
+      <div class="container-premium">
+        <div class="reveal max-w-2xl">
+          <p class="eyebrow">Services</p>
+          <h2 class="display-title mt-4 text-5xl text-espresso sm:text-6xl">Tout pour une commande fluide.</h2>
+        </div>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            ["truck", "Livraison", "Votre commande livrée rapidement à Abidjan."],
+            ["spark", "Livraison sans contact", "Remise propre, simple et sécurisée."],
+            ["bag", "Vente à emporter", "Préparez en ligne, récupérez en boutique."],
+            ["leaf", "Repas sur place", "Salle chaleureuse pour brunchs et pauses café."],
+            ["whatsapp", "Commande rapide", "Panier envoyé en un clic sur WhatsApp."],
+            ["star", "Service premium", "Conseil, packaging et attention aux détails."]
+          ].map(([icon, title, text]) => (
+            <article class="reveal rounded-md border border-biscuit bg-linen p-7 transition hover:-translate-y-1 hover:bg-espresso hover:text-cream">
+              <MynaIcon name={icon} class="icon text-caramel" />
+              <h3 class="mt-5 text-sm font-bold uppercase tracking-[.14em]">{title}</h3>
+              <p class="mt-3 text-sm leading-7 opacity-75">{text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="galerie" class="overflow-hidden bg-espresso py-20 text-cream lg:py-28">
+      <div class="container-premium">
+        <div class="reveal flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div>
+            <p class="eyebrow">Galerie</p>
+            <h2 class="display-title mt-4 text-5xl sm:text-6xl">Le plaisir commence par les yeux.</h2>
+          </div>
+          <p class="max-w-md text-sm leading-7 text-cream/65">Pains dorés, pâtisseries précises, brunchs lumineux et ambiance de maison française contemporaine.</p>
+        </div>
+        <div class="mt-10 grid auto-rows-[220px] gap-3 md:grid-cols-4">
+          {gallery.map(([label, image], index) => (
+            <figure class:list={["reveal-zoom group relative overflow-hidden rounded-md", index === 0 && "md:col-span-2 md:row-span-2", index === 5 && "md:col-span-2"]}>
+              <img src={image} alt={label} class="size-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" />
+              <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-espresso/90 to-transparent p-5 text-sm font-bold uppercase tracking-[.16em]">{label}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-biscuit py-20 lg:py-28">
+      <div class="container-premium">
+        <div class="reveal max-w-2xl">
+          <p class="eyebrow">Avis clients</p>
+          <h2 class="display-title mt-4 text-5xl text-espresso sm:text-6xl">Style Google Reviews, emotion boutique.</h2>
+        </div>
+        <div class="swiper review-swiper mt-10 !overflow-visible">
+          <div class="swiper-wrapper">
+            {reviews.map((review) => (
+              <article class="swiper-slide rounded-md border border-cocoa/10 bg-linen p-6 shadow-soft">
+                <div class="flex text-caramel" aria-label={`${review.rating} étoiles`}>
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <MynaIcon name="star" class:list={["icon", index < review.rating ? "fill-current" : "opacity-25"]} />
+                  ))}
+                </div>
+                <p class="mt-5 font-display text-2xl leading-9 text-espresso">"{review.text}"</p>
+                <div class="mt-7 flex items-center gap-3">
+                  <img src={review.avatar} alt="" class="size-12 rounded-full object-cover" loading="lazy" />
+                  <div>
+                    <p class="font-semibold text-espresso">{review.name}</p>
+                    <p class="text-sm text-muted">{review.date}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-cream py-20 lg:py-28">
+      <div class="container-premium">
+        <div class="reveal max-w-2xl">
+          <p class="eyebrow">Contact</p>
+          <h2 class="display-title mt-4 text-5xl text-espresso sm:text-6xl">Passez nous voir, ou commandez maintenant.</h2>
+        </div>
+        <div class="mt-10 grid gap-8 lg:grid-cols-[1.1fr_.9fr]">
+          <div class="map-frame reveal-left h-[420px] overflow-hidden rounded-md border border-biscuit shadow-soft">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d37791.5020462537!2d-3.9744043705745065!3d5.364641243030778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smaison%20kayser%20abidjan%5C!5e0!3m2!1sfr!2sci!4v1778924243573!5m2!1sfr!2sci" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="reveal-right grid gap-4">
+            {[
+              ["map", "Adresse", "Maison Kayser Abidjan, I 128, Abidjan"],
+              ["phone", "Téléphone", "07 00 33 3444"],
+              ["whatsapp", "WhatsApp Business", "+225 07 00 33 34 44"],
+              ["clock", "Horaires", "Ouvert jusqu'a 22h"]
+            ].map(([icon, label, value]) => (
+              <article class="flex gap-4 rounded-md border border-biscuit bg-linen p-5">
+                <MynaIcon name={icon} class="icon shrink-0 text-caramel" />
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-[.18em] text-caramel">{label}</p>
+                  <p class="mt-1 text-espresso">{value}</p>
+                </div>
+              </article>
+            ))}
+            <button class="premium-button mt-2 bg-whatsapp text-white hover:bg-[#1fb85a]" data-wa-order>
+              <MynaIcon name="whatsapp" />
+              Commander sur WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <a href={`https://wa.me/${whatsappNumber}`} class="fixed bottom-5 right-5 z-40 grid size-14 place-items-center rounded-full bg-whatsapp text-white shadow-[0_12px_40px_rgba(37,211,102,.35)] transition hover:scale-105" aria-label="WhatsApp Maison Kayser">
+    <MynaIcon name="whatsapp" />
+  </a>
+
+  <div class="fixed inset-0 z-[70] hidden bg-espresso/55 backdrop-blur-sm" data-cart-backdrop></div>
+  <aside class="fixed right-0 top-0 z-[80] flex h-full w-full max-w-md translate-x-full flex-col bg-linen shadow-premium transition-transform duration-500" data-cart-drawer aria-label="Panier">
+    <div class="flex items-center justify-between border-b border-biscuit p-5">
+      <p class="font-display text-3xl text-espresso">Mon panier</p>
+      <button class="grid size-10 place-items-center rounded-full border border-biscuit text-muted" data-cart-close aria-label="Fermer le panier">
+        <MynaIcon name="close" />
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto p-5" data-cart-items></div>
+    <div class="border-t border-biscuit p-5">
+      <div class="mb-4 flex items-center justify-between">
+        <span class="text-xs font-bold uppercase tracking-[.18em] text-muted">Total</span>
+        <strong class="font-display text-3xl text-espresso" data-cart-total>0 FCFA</strong>
+      </div>
+      <button class="premium-button w-full bg-whatsapp text-white hover:bg-[#1fb85a]" data-wa-order>
+        <MynaIcon name="whatsapp" />
+        Commander sur WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <div class="pointer-events-none fixed bottom-6 left-1/2 z-[90] -translate-x-1/2 translate-y-14 rounded-full border border-caramel bg-espresso px-5 py-3 text-sm font-medium text-cream opacity-0 shadow-premium transition-all" data-toast></div>
+
+  <script id="products-json" type="application/json" is:inline set:html={JSON.stringify(products)}></script>
+  <script define:vars={{ whatsappNumber }} is:inline>
+    window.MK_WHATSAPP_NUMBER = whatsappNumber;
+  </script>
+  <script>
+    import "../scripts/site.js";
+  </script>
+</BaseLayout>

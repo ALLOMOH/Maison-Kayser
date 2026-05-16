@@ -1,0 +1,97 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import MynaIcon from "@/components/MynaIcon.astro";
+
+const categories = ["Viennoiseries", "Pains", "Desserts", "Glaces", "Petit déjeuner", "Burgers", "Boissons", "Pizza", "Menus brunch"];
+---
+
+<BaseLayout title="Administration - Maison Kayser Abidjan" description="Backoffice Maison Kayser Abidjan">
+  <main class="min-h-screen bg-cream py-8 text-espresso">
+    <div class="container-premium">
+      <a href="/" class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[.14em] text-caramel">
+        <MynaIcon name="arrow" class="icon rotate-180" />
+        Retour au site
+      </a>
+
+      <section class="mt-8 grid gap-8 lg:grid-cols-[360px_1fr]">
+        <aside class="rounded-md border border-biscuit bg-linen p-6 shadow-soft">
+          <p class="eyebrow">Backoffice</p>
+          <h1 class="display-title mt-3 text-5xl">Produits</h1>
+          <p class="mt-4 text-sm leading-7 text-muted">Connexion simple, mot de passe hashé côté serveur et stockage local dans le fichier JSON.</p>
+
+          <form class="mt-8 grid gap-4" data-login-form>
+            <label class="grid gap-2 text-sm font-semibold text-espresso">
+              Mot de passe admin
+              <input class="rounded-md border border-biscuit bg-cream px-4 py-3 outline-none focus:border-caramel" type="password" name="password" autocomplete="current-password" placeholder="Mot de passe" />
+            </label>
+            <button class="premium-button bg-espresso text-cream hover:bg-caramel" type="submit">Connexion</button>
+          </form>
+
+          <div class="mt-6 hidden rounded-md border border-caramel/30 bg-caramel/10 p-4 text-sm text-cocoa" data-admin-status>
+            Connecté. Les modifications sont enregistrées dans `src/data/products.json`.
+          </div>
+        </aside>
+
+        <section class="hidden rounded-md border border-biscuit bg-linen p-6 shadow-soft" data-admin-app>
+          <div class="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p class="eyebrow">Catalogue</p>
+              <h2 class="display-title mt-3 text-4xl">Ajouter ou modifier un produit</h2>
+            </div>
+            <button class="premium-button border border-biscuit text-cocoa hover:border-caramel hover:text-caramel" data-reset-form type="button">
+              <MynaIcon name="plus" />
+              Nouveau
+            </button>
+          </div>
+
+          <form class="mt-8 grid gap-4 lg:grid-cols-2" data-product-form>
+            <input type="hidden" name="id" />
+            <label class="grid gap-2 text-sm font-semibold">
+              Catégorie
+              <select class="rounded-md border border-biscuit bg-cream px-4 py-3 outline-none focus:border-caramel" name="category">
+                {categories.map((category) => <option value={category}>{category}</option>)}
+              </select>
+            </label>
+            <label class="grid gap-2 text-sm font-semibold">
+              Nom
+              <input class="rounded-md border border-biscuit bg-cream px-4 py-3 outline-none focus:border-caramel" name="name" placeholder="Croissant au beurre" required />
+            </label>
+            <label class="grid gap-2 text-sm font-semibold">
+              Prix FCFA
+              <input class="rounded-md border border-biscuit bg-cream px-4 py-3 outline-none focus:border-caramel" name="price" type="number" min="0" step="50" required />
+            </label>
+            <label class="grid gap-2 text-sm font-semibold">
+              Image URL
+              <input class="rounded-md border border-biscuit bg-cream px-4 py-3 outline-none focus:border-caramel" name="image" type="url" placeholder="https://..." required />
+            </label>
+            <label class="grid gap-2 text-sm font-semibold lg:col-span-2">
+              Description courte
+              <textarea class="min-h-28 rounded-md border border-biscuit bg-cream px-4 py-3 outline-none focus:border-caramel" name="description" required></textarea>
+            </label>
+            <div class="flex flex-col gap-3 sm:flex-row lg:col-span-2">
+              <button class="premium-button bg-espresso text-cream hover:bg-caramel" type="submit">
+                <MynaIcon name="edit" />
+                Enregistrer
+              </button>
+              <button class="premium-button border border-biscuit text-cocoa hover:border-red-700 hover:text-red-700" type="button" data-delete-product disabled>
+                <MynaIcon name="trash" />
+                Supprimer
+              </button>
+            </div>
+          </form>
+
+          <div class="mt-10">
+            <p class="text-xs font-bold uppercase tracking-[.18em] text-caramel">Produits existants</p>
+            <div class="mt-4 grid gap-3" data-products-list></div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <div class="pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 translate-y-12 rounded-full bg-espresso px-5 py-3 text-sm text-cream opacity-0 shadow-premium transition-all" data-admin-toast></div>
+
+  <script>
+    import "../scripts/admin.js";
+  </script>
+</BaseLayout>

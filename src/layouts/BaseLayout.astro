@@ -1,0 +1,58 @@
+---
+import "@/styles/global.css";
+
+const {
+  title = "Maison Kayser Abidjan - Boulangerie & Pâtisserie Française Premium",
+  description = "Maison Kayser Abidjan : boulangerie artisanale, pâtisserie premium, viennoiseries françaises, brunch, glaces et livraison à Abidjan. Commandez sur WhatsApp.",
+  keywords = "boulangerie Abidjan, pâtisserie Abidjan, brunch Abidjan, viennoiserie Abidjan, Maison Kayser Abidjan, livraison pâtisserie Abidjan"
+} = Astro.props;
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://maison-kayser-abidjan.local/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_CI" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1400&q=85" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://www.google.com" />
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "name": "Maison Kayser Abidjan",
+        "image": "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1400&q=85",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "I 128",
+          "addressLocality": "Abidjan",
+          "addressCountry": "CI"
+        },
+        "telephone": "+2250700333444",
+        "priceRange": "800 FCFA - 17500 FCFA",
+        "servesCuisine": ["Boulangerie française", "Pâtisserie", "Brunch"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.3",
+          "reviewCount": "900"
+        },
+        "openingHours": "Mo-Su 07:00-22:00"
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Akosua M.",
+    "rating": 5,
+    "date": "Mars 2026",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=180&q=80",
+    "text": "Les croissants sont dorés, légers et vraiment réguliers. On retrouve le goût d'une boulangerie parisienne avec l'accueil d'Abidjan."
+  },
+  {
+    "name": "Kouamé L.",
+    "rating": 5,
+    "date": "Février 2026",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=180&q=80",
+    "text": "Le mille-feuille vanille est exceptionnel. Commande WhatsApp simple, retrait rapide, packaging très propre."
+  },
+  {
+    "name": "Fatou D.",
+    "rating": 4,
+    "date": "Avril 2026",
+    "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=180&q=80",
+    "text": "Brunch élégant, pâtisseries fines et service attentionné. Une adresse sûre pour les dimanches en famille."
+  },
+  {
+    "name": "Ibrahim K.",
+    "rating": 5,
+    "date": "Janvier 2026",
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=180&q=80",
+    "text": "La baguette tradition et le pain de campagne sont parmi les meilleurs que j'ai goûtés à Abidjan."
+  },
+  {
+    "name": "Mariame S.",
+    "rating": 5,
+    "date": "Mai 2026",
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=180&q=80",
+    "text": "Le sorbet mangue est frais, intense, pas trop sucré. Le site donne envie de tout ajouter au panier."
+  }
+]

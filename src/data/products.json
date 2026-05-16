@@ -1,0 +1,170 @@
+[
+  {
+    "id": 1,
+    "category": "Viennoiseries",
+    "name": "Croissant au Beurre AOP",
+    "price": 1200,
+    "description": "Feuilletage pur beurre, miel discret, dorure croustillante.",
+    "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 2,
+    "category": "Viennoiseries",
+    "name": "Pain au Chocolat Signature",
+    "price": 1500,
+    "description": "Deux barres chocolat noir, pâte levée feuilletée et cœur fondant.",
+    "image": "https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 3,
+    "category": "Viennoiseries",
+    "name": "Brioche Tressée Vanille",
+    "price": 2500,
+    "description": "Brioche légère, vanille bourbon et sucre perlé.",
+    "image": "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 4,
+    "category": "Pains",
+    "name": "Baguette Tradition",
+    "price": 800,
+    "description": "Levain naturel, croûte fine et mie longuement fermentée.",
+    "image": "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 5,
+    "category": "Pains",
+    "name": "Pain de Campagne",
+    "price": 2200,
+    "description": "Blé complet, seigle doux, cuisson sur sole.",
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 6,
+    "category": "Desserts",
+    "name": "Tarte Citron Meringuée",
+    "price": 3500,
+    "description": "Crème citron acidulée, meringue italienne et sablé croustillant.",
+    "image": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 7,
+    "category": "Desserts",
+    "name": "Mille-Feuille Vanille",
+    "price": 3800,
+    "description": "Crème diplomate, feuilletage caramélisé, finition poudrée.",
+    "image": "https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 8,
+    "category": "Desserts",
+    "name": "Eclair Café Grand Cru",
+    "price": 2500,
+    "description": "Pâte à choux, crème café intense et glaçage brillant.",
+    "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 9,
+    "category": "Glaces",
+    "name": "Glace Vanille Bourbon",
+    "price": 1500,
+    "description": "Vanille de Madagascar, crème fraîche et texture soyeuse.",
+    "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 10,
+    "category": "Glaces",
+    "name": "Sorbet Mangue d'Abidjan",
+    "price": 1800,
+    "description": "Mangue locale, fraîcheur vive et finale naturellement sucrée.",
+    "image": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 11,
+    "category": "Petit déjeuner",
+    "name": "Formule Paris-Abidjan",
+    "price": 4500,
+    "description": "Viennoiserie, baguette, beurre, confiture et café arabica.",
+    "image": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 12,
+    "category": "Petit déjeuner",
+    "name": "Oeufs Brouillés Complets",
+    "price": 3800,
+    "description": "Oeufs crémeux, toast, salade fine et jus pressé minute.",
+    "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 13,
+    "category": "Burgers",
+    "name": "Burger Gourmet Kayser",
+    "price": 7500,
+    "description": "Pain brioché maison, boeuf grillé, cheddar et pickles fins.",
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 14,
+    "category": "Burgers",
+    "name": "Burger Végétarien",
+    "price": 6500,
+    "description": "Galette de légumes, avocat, fromage frais et pain graines.",
+    "image": "https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 15,
+    "category": "Boissons",
+    "name": "Café Espresso",
+    "price": 800,
+    "description": "Arabica sélectionné, extraction courte et crema dorée.",
+    "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 16,
+    "category": "Boissons",
+    "name": "Jus d'Orange Frais",
+    "price": 1500,
+    "description": "Oranges pressées minute, sans sucre ajouté.",
+    "image": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 17,
+    "category": "Pizza",
+    "name": "Pizza Margherita",
+    "price": 6500,
+    "description": "Tomate confite, mozzarella, basilic et pâte fine maison.",
+    "image": "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 18,
+    "category": "Pizza",
+    "name": "Pizza Quatre Fromages",
+    "price": 7500,
+    "description": "Mozzarella, chèvre, gorgonzola, parmesan et huile d'olive.",
+    "image": "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 19,
+    "category": "Menus brunch",
+    "name": "Brunch Classique",
+    "price": 12500,
+    "description": "Viennoiseries, oeufs, fromages, fruits, jus frais et café.",
+    "image": "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 20,
+    "category": "Menus brunch",
+    "name": "Brunch Gourmand",
+    "price": 17500,
+    "description": "Brunch complet, dessert signature et boisson premium.",
+    "image": "https://images.unsplash.com/photo-1546039907-7fa05f864c02?auto=format&fit=crop&w=900&q=85"
+  },
+  {
+    "id": 21,
+    "category": "Pains",
+    "name": "Pain abidjannaise",
+    "price": 200,
+    "description": "pain croustignant armolieux",
+    "image": "https://images.unsplash.com/photo-1669034937803-862fe581fc92?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
+]
