@@ -17,9 +17,9 @@ const categories = ["Viennoiseries", "Pains", "Desserts", "Glaces", "Petit déje
         <aside class="rounded-md border border-biscuit bg-linen p-6 shadow-soft">
           <p class="eyebrow">Backoffice</p>
           <h1 class="display-title mt-3 text-5xl">Produits</h1>
-          <p class="mt-4 text-sm leading-7 text-muted">Connexion simple, mot de passe hashé côté serveur et stockage local dans le fichier JSON.</p>
+          <p class="mt-4 text-sm leading-7 text-muted">Connexion administrateur.</p>
 
-          <form class="mt-8 grid gap-4" data-login-form>
+          <form class="mt-8 grid gap-4 absolute top-50 right-50 transform -translate-y-1/2" data-login-form>
             <label class="grid gap-2 text-sm font-semibold text-espresso">
               Mot de passe admin
               <input class="rounded-md border border-biscuit bg-cream px-4 py-3 outline-none focus:border-caramel" type="password" name="password" autocomplete="current-password" placeholder="Mot de passe" />
@@ -28,7 +28,7 @@ const categories = ["Viennoiseries", "Pains", "Desserts", "Glaces", "Petit déje
           </form>
 
           <div class="mt-6 hidden rounded-md border border-caramel/30 bg-caramel/10 p-4 text-sm text-cocoa" data-admin-status>
-            Connecté. Les modifications sont enregistrées dans `src/data/products.json`.
+            Connecté.
           </div>
         </aside>
 
