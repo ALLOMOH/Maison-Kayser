@@ -2,6 +2,8 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import node from "@astrojs/node";
 
+import vercel from "@astrojs/vercel";
+
 export default defineConfig({
  image:{
     domains:["images.unsplash.com","astro.build"],
@@ -9,8 +11,11 @@ export default defineConfig({
 
  },
   output: "server",
-  adapter: node({
-    mode: "standalone"
+  adapter: vercel({
+   webAnalytics:{
+     enable:true,
+   },
+  entrypointResolution:"auto"
   }),
 
   vite: {

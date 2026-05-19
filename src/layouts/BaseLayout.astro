@@ -1,6 +1,6 @@
 ---
 import "@/styles/global.css";
-
+import Analytics from '@vercel/analytics/astro';
 const {
   title = "Maison Kayser Abidjan - Boulangerie & Pâtisserie Française Premium",
   description = "Maison Kayser Abidjan : boulangerie artisanale, pâtisserie premium, viennoiseries françaises, brunch, glaces et livraison à Abidjan. Commandez sur WhatsApp.",
@@ -50,7 +50,8 @@ const {
         },
         "openingHours": "Mo-Su 07:00-22:00"
       }
-    </script>
+    </script> 
+    <Analytics />
   </head>
   <body>
     <slot />
