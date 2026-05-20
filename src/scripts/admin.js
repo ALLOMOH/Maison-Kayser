@@ -42,6 +42,22 @@ function revealAdmin() {
   qs("[data-login-form]").classList.add("hidden");
 }
 
+function hideAdmin() {
+  qs("[data-admin-app]").classList.add("hidden");
+  qs("[data-admin-status]").classList.add("hidden");
+  qs("[data-login-form]").classList.remove("hidden");
+  qs("[data-login-form]")?.reset();
+  setForm();
+  products = [];
+  qs("[data-products-list]").innerHTML = "";
+}
+
+function logoutAdmin() {
+  sessionStorage.removeItem(tokenKey);
+  hideAdmin();
+  showToast("Déconnexion réussie");
+}
+
 function readForm() {
   const data = Object.fromEntries(new FormData(form));
   return {
@@ -140,8 +156,12 @@ deleteButton?.addEventListener("click", async () => {
 });
 
 qs("[data-reset-form]")?.addEventListener("click", () => setForm());
+qs("[data-logout]")?.addEventListener("click", logoutAdmin);
 
 if (token()) {
   revealAdmin();
-  loadProducts().catch(() => sessionStorage.removeItem(tokenKey));
+  loadProducts().catch(() => {
+    sessionStorage.removeItem(tokenKey);
+    hideAdmin();
+  });
 }

@@ -38,10 +38,16 @@ const categories = ["Viennoiseries", "Pains", "Desserts", "Glaces", "Petit déje
               <p class="eyebrow">Catalogue</p>
               <h2 class="display-title mt-3 text-4xl">Ajouter ou modifier un produit</h2>
             </div>
-            <button class="premium-button border border-biscuit text-cocoa hover:border-caramel hover:text-caramel" data-reset-form type="button">
-              <MynaIcon name="plus" />
-              Nouveau
-            </button>
+            <div class="flex flex-col gap-3 sm:flex-row">
+              <button class="premium-button border border-biscuit text-cocoa hover:border-caramel hover:text-caramel" data-reset-form type="button">
+                <MynaIcon name="plus" />
+                Nouveau
+              </button>
+              <button class="premium-button border border-biscuit text-cocoa hover:border-red-700 hover:text-red-700" data-logout type="button">
+                <MynaIcon name="close" />
+                Déconnexion
+              </button>
+            </div>
           </div>
 
           <form class="mt-8 grid gap-4 lg:grid-cols-2" data-product-form>

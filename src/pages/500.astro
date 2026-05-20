@@ -1,0 +1,53 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import MynaIcon from "@/components/MynaIcon.astro";
+
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER ?? "2250700333444";
+---
+
+<BaseLayout
+  title="Erreur serveur - Maison Kayser Abidjan"
+  description="Une erreur technique est survenue sur Maison Kayser Abidjan. Vous pouvez revenir à l'accueil ou contacter la boutique sur WhatsApp."
+>
+  <main class="relative min-h-screen overflow-hidden bg-cream text-espresso">
+    <div class="absolute inset-x-0 top-0 h-1/2 bg-espresso"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(184,132,66,.28),transparent_34%),linear-gradient(to_bottom,transparent,rgba(255,250,242,.96)_58%)]"></div>
+
+    <section class="container-premium relative grid min-h-screen items-center gap-10 py-20 lg:grid-cols-[1fr_.8fr]">
+      <div class="text-cream">
+        <a href="/" class="font-display text-3xl tracking-[.08em] text-saffron">Maison Kayser</a>
+        <p class="eyebrow mt-12 text-saffron">Erreur 500</p>
+        <h1 class="display-title mt-5 text-6xl sm:text-7xl lg:text-8xl">
+          Le four marque une pause.
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-8 text-cream/72">
+          Une erreur technique est survenue. L'équipe peut encore recevoir votre demande par WhatsApp pendant que le site reprend son souffle.
+        </p>
+
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <a href="/" class="premium-button bg-caramel text-linen shadow-soft hover:bg-saffron">
+            Retour à l'accueil
+            <MynaIcon name="arrow" />
+          </a>
+          <a href={`https://wa.me/${whatsappNumber}`} class="premium-button border border-whatsapp/60 text-whatsapp hover:bg-whatsapp hover:text-white">
+            <MynaIcon name="whatsapp" />
+            Contacter la boutique
+          </a>
+        </div>
+      </div>
+
+      <aside class="rounded-md border border-biscuit bg-linen p-7 text-espresso shadow-premium">
+        <MynaIcon name="spark" class="icon text-caramel" />
+        <h2 class="mt-5 font-display text-4xl">Besoin d'une commande urgente ?</h2>
+        <p class="mt-4 text-sm leading-7 text-muted">
+          Envoyez directement votre demande avec vos produits, quantités, téléphone et adresse de livraison.
+        </p>
+        <div class="mt-6 grid gap-3 text-sm">
+          <p class="rounded-md bg-cream p-4">Téléphone : 07 00 33 3444</p>
+          <p class="rounded-md bg-cream p-4">Horaires : ouvert jusqu'à 22h</p>
+          <p class="rounded-md bg-cream p-4">Adresse : Maison Kayser Abidjan, I 128, Abidjan</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+</BaseLayout>
